@@ -3,6 +3,15 @@
  	easing: 'slide'
  });
 
+function countDate()
+{
+    var startDate = new Date(2020, 11, 14);
+    var today = new Date();
+    var total = new Date();
+    total.setTime((today.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24);
+    $('#codingDays').attr('data-number', total.getTime());
+}
+
 (function($) {
 
 	"use strict";
@@ -16,7 +25,8 @@
     scrollProperty: 'scroll'
   });
 
-
+    countDate();
+    
 	var fullHeight = function() {
 
 		$('.js-fullheight').css('height', $(window).height());
